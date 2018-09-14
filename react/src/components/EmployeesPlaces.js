@@ -3,7 +3,7 @@ import React from 'react'
 class EmployeesPlaces extends React.Component {
     renderPlace(place, index) {
         return (
-            <div key={index} className="row">
+            <div key={index} className="row bg-light">
                 <div className="col-6 p-3">
                     {index !== undefined && `Этаж ${index + 1}.`} Количество человек: {place.people.length}
                 </div>
@@ -20,7 +20,7 @@ class EmployeesPlaces extends React.Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container bg-dark">
                 <div className="row align-items-center p-3 my-3 bg-light rounded box-shadow">
                     <div className="col-6 p-3">
                         <h3>
@@ -31,11 +31,11 @@ class EmployeesPlaces extends React.Component {
                         </p>
                     </div>
                 </div>
-                <h4 className="p-3">
+                <h4 className="p-3 text-light">
                     Столовая
                 </h4>
                 {this.renderPlace(this.props.employees.canteen)}
-                <h4 className="p-3">
+                <h4 className="p-3 bg-dark text-light">
                     Офис
                 </h4>
                 {this.props.employees.floors.map(this.renderPlace)}
